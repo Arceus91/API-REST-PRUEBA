@@ -68,7 +68,7 @@ modulo.post('/usuarios', (req, res) => {
     });
 });
 
-modulo.post('/ubicaciones', (req, res) => {
+/*modulo.post('/ubicaciones', (req, res) => {
     const {id,id_usuario,latitud,longitud} = req.body;
     console.log(req.body);
     const query= 'CALL ingresoUsuarios(?,?,?,?);';
@@ -83,7 +83,7 @@ modulo.post('/ubicaciones', (req, res) => {
             mysqlConnection.rollback();
         } 
     });
-});
+});*/
 
 modulo.put('/usuarios/:id', (req, res) => {
     const {nombre,usuario,contraseña} = req.body;
