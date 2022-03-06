@@ -92,6 +92,7 @@ modulo.put('/usuarios/:id', (req, res) => {
     mysqlConnection.query(query, [id,nombre,usuario,contraseña],(err,rows,fields) =>
     {
         if(!err){
+            
             res.json({Status: 'Usuario Actualizado'})
             mysqlConnection.commit();
         }
