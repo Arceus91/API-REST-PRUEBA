@@ -50,6 +50,18 @@ modulo.get('/ubicaciones/:usuario', (req, res) =>{
     });
 });
 
+modulo.get('/lugares/:id_usuario',(req, res) => {
+    mysqlConnection.query('select ub.id_usuario, u.usuario, ub.latitud, ub.longitud from usuarios u, ubicaciones ub where u.id = ub.id_usuario and ub.id_usuario =1;', (err, rows, fields) =>{
+        if(!err){
+            res.json(rows)
+        }
+        else{
+            console.log(err);
+        }
+    });
+});
+
+
 modulo.post('/usuarios', (req, res) => {
     const {id,nombre,usuario,contraseña} = req.body;
     console.log(req.body);
