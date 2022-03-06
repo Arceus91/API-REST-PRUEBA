@@ -1,5 +1,7 @@
 const mysql = require('mysql');
 
+
+//cambiar Parametros de Conexion a la base de datos.
 const mysqlConnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
