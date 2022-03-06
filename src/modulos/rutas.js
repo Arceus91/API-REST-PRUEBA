@@ -68,14 +68,14 @@ modulo.post('/usuarios', (req, res) => {
     });
 });
 
-/*modulo.post('/ubicaciones', (req, res) => {
+modulo.post('/ubicaciones', (req, res) => {
     const {id,id_usuario,latitud,longitud} = req.body;
     console.log(req.body);
-    const query= 'CALL ingresoUsuarios(?,?,?,?);';
-    mysqlConnection.query(query, [id,nombre,usuario,contraseña],(err,rows,fields) =>
+    const query= 'CALL ingresoUbicaciones(?,?,?,?);';
+    mysqlConnection.query(query, [id,id_usuario,latitud,longitud],(err,rows,fields) =>
     {
         if(!err){
-            res.json({Status: 'Usuario Registrado'})
+            res.json({Status: 'Ubicacion Registrada'})
            mysqlConnection.commit();
         }
         else{
@@ -83,7 +83,7 @@ modulo.post('/usuarios', (req, res) => {
             mysqlConnection.rollback();
         } 
     });
-});*/
+});
 
 modulo.put('/usuarios/:id', (req, res) => {
     const {nombre,usuario,contraseña} = req.body;
