@@ -51,7 +51,8 @@ modulo.get('/ubicaciones/:usuario', (req, res) =>{
 });
 
 modulo.get('/lugares/:id_usuario',(req, res) => {
-    mysqlConnection.query('select u.usuario, ub.latitud, ub.longitud from usuarios u, ubicaciones ub where u.id = ub.id_usuario and ub.id_usuario =1;', (err, rows, fields) =>{
+    const { id_usuario } = req.params;
+    mysqlConnection.query('select u.usuario, ub.latitud, ub.longitud from usuarios u, ubicaciones ub where u.id = ub.id_usuario and ub.id_usuario =?;', [id_usuario], (err, rows, fields) =>{
         if(!err){
             res.json(rows)
         }
