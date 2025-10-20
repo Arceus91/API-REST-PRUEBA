@@ -15,6 +15,14 @@ modulo.get('/usuarios',(req, res) => {
     });
 });
 
+modulo.get('/hola',(req, res) => {
+
+    console.log("hola");
+    res.json({ title: "hola" });
+        
+    });
+});
+
 modulo.get('/ubicaciones',(req, res) => {
     mysqlConnection.query('SELECT * FROM apidb.ubicaciones', (err, rows, fields) =>{
         if(!err){
