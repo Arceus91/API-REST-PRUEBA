@@ -19,8 +19,6 @@ modulo.get('/hola',(req, res) => {
 
     console.log("hola");
     res.json({ title: "hola" });
-        
-    });
 });
 
 modulo.get('/ubicaciones',(req, res) => {
